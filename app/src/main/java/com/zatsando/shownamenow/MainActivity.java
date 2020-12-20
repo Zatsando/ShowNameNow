@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 private Button myButton;
 private TextView showText;
 private EditText enterName;
+private Button clearButton;
 
 
     @Override
@@ -21,6 +22,7 @@ private EditText enterName;
 
         myButton = findViewById(R.id.button);
         enterName = findViewById(R.id.editText);
+        clearButton = findViewById(R.id.clearButton);
 
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,12 @@ private EditText enterName;
 
         showText = findViewById(R.id.textView);
 
-
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showText.setText("");
+                enterName.setText("");
+            }
+        });
     }
 }
